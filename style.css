@@ -1,0 +1,22 @@
+.portfolio-item {
+  background-color: white;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  
+}
+
+.portfolio-item img{
+  display: block;
+    object-fit: contain;
+  height: 257px;
+    margin: auto;
+    flex: 0 1 225px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.input-group{
+  padding: 20px 0;
+}
