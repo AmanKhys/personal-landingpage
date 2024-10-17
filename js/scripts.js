@@ -1,16 +1,8 @@
-/*!
-* Start Bootstrap - Freelancer v7.0.7 (https://startbootstrap.com/theme/freelancer)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
 
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
-    var navbarShrink = function () {
+    var navbarShrink = function() {
         const navbarCollapsible = document.body.querySelector('#mainNav');
         if (!navbarCollapsible) {
             return;
@@ -43,7 +35,7 @@ window.addEventListener('DOMContentLoaded', event => {
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll('#navbarResponsive .nav-link')
     );
-    responsiveNavItems.map(function (responsiveNavItem) {
+    responsiveNavItems.map(function(responsiveNavItem) {
         responsiveNavItem.addEventListener('click', () => {
             if (window.getComputedStyle(navbarToggler).display !== 'none') {
                 navbarToggler.click();
@@ -52,3 +44,30 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+// form validation
+
+function validateForm() {
+    isValid = true;
+    const email = document.getElementById("email").value.trim();
+    const number = document.getElementById("number").value.trim();
+    const name = document.getElementById("name").value.trim();
+
+    let validEmail = /^[a-zA-Z]{1,}[a-zA-Z0-9]*@[a-zA-Z]{1,}\.[a-zA-Z]{1,}$/;
+    let validName = /^[a-zA-Z]{1,0}$/;
+
+    if (!validEmail.test(email)) {
+        document.getElementById('emailError').textContent = 'enter a valid mail';
+        isValid = false;
+    }
+    if (number < 1000000000 && number >= 10000000000) {
+        document.getElementById('numberError').textContent = 'enter a 10 digit number';
+        isValid = false;
+    }
+    if (!validName.test(name)) {
+        document.getElementById("nameError").textContent = 'enter a valid name';
+        isValid = false;
+    }
+
+    return isValid;
+}
