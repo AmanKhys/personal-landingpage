@@ -26,3 +26,16 @@
 .input-group{
   padding: 20px 0;
 }
+
+#numberError,
+#nameError,
+#emailError{
+  display: none;
+  width: fit-content;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 12px;
+  padding: 2px 4px;
+  background-color: aquamarine;
+  color: rgb(0, 0, 0);
+}
